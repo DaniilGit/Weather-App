@@ -2,15 +2,27 @@ import React, {Component, useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import "../styles/App.css";
+import getWeatherNextDays from "./function/getWeatherNextDays";
 
-async function getWeather(city, setData, data) {
+async function getWeather(nameCity, setData, data) {
   const response = await axios.get(
-    `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=ru&units=metric&appid=e6ebd56804d0ed1639181c4a36c41c1c`
+    `https://api.openweathermap.org/data/2.5/forecast?q=${nameCity}&lang=ru&units=metric&appid=e6ebd56804d0ed1639181c4a36c41c1c`
   );
 
-  data.arrayCity.push(response.data);
-  //setData({arrayCity: data.arrayCity, city: response.data});
-  setData({...data, city: response.data });
+  let city = {
+    name: response.data.city.name,
+    currentDay: {
+      temp: response.data.list[0].main.temp,
+      tempMax: response.data.list[0].main.temp_max,
+      tempMin: response.data.list[0].main.temp_min,
+      clouds: response.data.list[0].weather[0].main,
+      wind: response.data.list[0].wind.speed,
+      humidity: response.data.list[0].main.humidity,
+    },
+    nextDays: getWeatherNextDays(response.data.list),
+  };
+
+  setData({...data, newCity: response.data});
 }
 
 function ButtonTest(props) {
@@ -31,8 +43,8 @@ function ButtonTest(props) {
 
 function App(props) {
   const [data, setData] = React.useState({
-    city: {},
-    arrayCity: [],
+    newCity: {},
+    savedCity: [],
   });
   const [isLoading, setLoading] = React.useState(false);
 
@@ -44,7 +56,7 @@ function App(props) {
   if (!isLoading) {
     return <div>Загрузка!</div>;
   } else {
-    console.log(data.arrayCity);
+    console.log(data.newCity);
     return <ButtonTest data={data} setData={setData} />;
   }
 }
