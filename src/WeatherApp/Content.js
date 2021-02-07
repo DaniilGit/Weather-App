@@ -1,9 +1,10 @@
-import React, {Component, useEffect, useState} from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import "../styles/Content.css";
 import Icon from "./Icons";
+import Loader from "./Loader";
 
-function Content() {
+function Content(props) {
+  let isLoading = props.isLoading;
 
   return (
     <div className="lightTheme main-container">
@@ -17,6 +18,8 @@ function Content() {
           <button>Тема</button>
           <button>Язык</button>
         </div>
+      </div>
+      <div className="cards-container">
       </div>
     </div>
   );

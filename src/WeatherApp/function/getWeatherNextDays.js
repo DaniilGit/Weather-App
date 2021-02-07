@@ -26,7 +26,7 @@ function getTempNextDays(listDays, result) {
   let cnt = 0;
 
   for (let i = 0; i < listDays.length; i++) {
-    if (cnt == 8 || i == listDays.length - 1) {
+    if (cnt === 8 || i === listDays.length - 1) {
       result.push({
         day: "",
         clouds: "",
@@ -54,7 +54,7 @@ function getWeatherNextDays(listDays) {
   let result = [];
 
   for (let i = 0; i < listDays.length; i++) {
-    if (buffer != listDays[i].dt_txt.slice(0, 10)) {
+    if (buffer !== listDays[i].dt_txt.slice(0, 10)) {
       bufferDays.push(listDays[i]);
     }
   }
@@ -62,8 +62,6 @@ function getWeatherNextDays(listDays) {
   getTempNextDays(bufferDays, result);
   getDaysOfTheWeek(bufferDays, result);
   getCloudsNextDays(listDays, result);
-
-  console.log(result);
 
   return result;
 }

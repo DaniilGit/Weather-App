@@ -1,11 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 function Icon(props) {
   let weather = props.weather;
   let nameClass = props.nameClass;
 
-  if (weather == "sunny") {
+  if (weather === "sunny") {
     return (
       <svg viewBox="2050 -845 262 262" className={nameClass}>
         <circle
@@ -20,7 +19,7 @@ function Icon(props) {
     );
   }
 
-  if (weather == "cloudy") {
+  if (weather === "cloudy") {
     return (
       <svg viewBox="2436.9 -843.1 275.5 274.1" className={nameClass}>
         <g transform="translate(84 790)">
@@ -40,7 +39,7 @@ function Icon(props) {
     );
   }
 
-  if (weather == "snowing") {
+  if (weather === "snowing") {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +57,7 @@ function Icon(props) {
     );
   }
 
-  if (weather == "raining") {
+  if (weather === "raining") {
     return (
       <svg viewBox="3170 -843.1 163.5 242.7" className={nameClass}>
         <g>
@@ -77,7 +76,7 @@ function Icon(props) {
     );
   }
 
-  if (weather == "storm") {
+  if (weather === "storm") {
     return (
       <svg viewBox="3487.9 -810.7 291.2 200.3" className={nameClass}>
         <g transform="translate(1959 -1260.7)">
