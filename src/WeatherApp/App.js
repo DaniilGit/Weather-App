@@ -15,14 +15,14 @@ async function getWeather(nameCity, setData, data) {
       temp: response.data.list[0].main.temp,
       tempMax: response.data.list[0].main.temp_max,
       tempMin: response.data.list[0].main.temp_min,
-      clouds: response.data.list[0].weather[0].main,
+      clouds: response.data.list[0].weather[0].description,
       wind: response.data.list[0].wind.speed,
       humidity: response.data.list[0].main.humidity,
     },
     nextDays: getWeatherNextDays(response.data.list),
   };
 
-  setData({...data, newCity: response.data});
+  setData({...data, newCity: city});
 }
 
 function ButtonTest(props) {
@@ -56,7 +56,7 @@ function App(props) {
   if (!isLoading) {
     return <div>Загрузка!</div>;
   } else {
-    console.log(data.newCity);
+    //console.log(data.newCity);
     return <ButtonTest data={data} setData={setData} />;
   }
 }

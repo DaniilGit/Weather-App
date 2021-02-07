@@ -1,5 +1,6 @@
 function getDaysOfTheWeek(listDays, result) {
-  let date = new Date();
+  let date = new Date().getDay();
+  let cnt = 1;
   let days = [
     "Воскресенье",
     "Понедельник",
@@ -9,9 +10,14 @@ function getDaysOfTheWeek(listDays, result) {
     "Пятница",
     "Суббота",
   ];
-  
-  for (let i = 0; i < 5; i++) {
-    result[i].day = days[i];
+
+  for (let i = 0; i < result.length; i++) {
+    if (date + cnt > 6) {
+      date = 0;
+      cnt = 0;
+    }
+    result[i].day = days[date + cnt];
+    cnt++;
   }
 }
 
@@ -34,8 +40,12 @@ function getTempNextDays(listDays, result) {
   }
 }
 
-function getCloudsNextDays() {
-
+function getCloudsNextDays(listDays, result) {
+  let cnt = 0;
+  for (let i = 7; i < listDays.length; i += 7) {
+    result[cnt].clouds = listDays[i].weather[0].description;
+    cnt++;
+  }
 }
 
 function getWeatherNextDays(listDays) {
@@ -51,15 +61,11 @@ function getWeatherNextDays(listDays) {
 
   getTempNextDays(bufferDays, result);
   getDaysOfTheWeek(bufferDays, result);
+  getCloudsNextDays(listDays, result);
+
   console.log(result);
 
-  // for (let i = 0; i < bufferDays.length; i++) {
-  //   if (cnt == 4) result[i - cnt].clouds = bufferDays[i].weather[0].main;
-  //   cnt++
-  // }
-
-  //console.log(result);
-  return listDays;
+  return result;
 }
 
 export default getWeatherNextDays;
