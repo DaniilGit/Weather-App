@@ -1,7 +1,7 @@
 import React, {Component, useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import "../styles/App.css";
+import Content from "./Content";
 import getWeatherNextDays from "./function/getWeatherNextDays";
 
 async function getWeather(nameCity, setData, data) {
@@ -56,8 +56,7 @@ function App(props) {
   if (!isLoading) {
     return <div>Загрузка!</div>;
   } else {
-    //console.log(data.newCity);
-    return <ButtonTest data={data} setData={setData} />;
+    return <Content/>;
   }
 }
 

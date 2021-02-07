@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+}
+/*# sourceMappingURL=index.css.map */
