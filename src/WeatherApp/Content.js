@@ -1,7 +1,8 @@
 import React from "react";
 import "../styles/Content.css";
-import Icon from "./Icons";
+import WeatherIcon from "./WeatherIcons";
 import Loader from "./Loader";
+import BlockCards from "./BlockCards";
 
 function Content(props) {
   let isLoading = props.isLoading;
@@ -11,16 +12,14 @@ function Content(props) {
       <div className="header">
         <div className="title">
           <div className="title__name">Weather App</div>
-          <Icon weather={"cloudy"} nameClass={"title__icon"}/>
+          <WeatherIcon weather={"обл"} nameClass={"title__icon"} />
         </div>
         <div className="header__center">TODAY</div>
         <div className="container-button">
           <button>Тема</button>
-          <button>Язык</button>
         </div>
       </div>
-      <div className="cards-container">
-      </div>
+      <BlockCards cities={props.cities} />
     </div>
   );
 }

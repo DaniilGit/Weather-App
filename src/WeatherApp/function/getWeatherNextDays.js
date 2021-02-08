@@ -21,7 +21,7 @@ function getDaysOfTheWeek(listDays, result) {
   }
 }
 
-function getTempNextDays(listDays, result) {
+function getTemp(listDays, result) {
   let sumTemp = 0;
   let cnt = 0;
 
@@ -29,7 +29,7 @@ function getTempNextDays(listDays, result) {
     if (cnt === 8 || i === listDays.length - 1) {
       result.push({
         day: "",
-        clouds: "",
+        weather: "",
         temp: (sumTemp / cnt).toFixed(1),
       });
       sumTemp = 0;
@@ -40,10 +40,10 @@ function getTempNextDays(listDays, result) {
   }
 }
 
-function getCloudsNextDays(listDays, result) {
+function getWeather(listDays, result) {
   let cnt = 0;
   for (let i = 7; i < listDays.length; i += 7) {
-    result[cnt].clouds = listDays[i].weather[0].description;
+    result[cnt].weather = listDays[i].weather[0].description;
     cnt++;
   }
 }
@@ -59,9 +59,9 @@ function getWeatherNextDays(listDays) {
     }
   }
 
-  getTempNextDays(bufferDays, result);
+  getTemp(bufferDays, result);
   getDaysOfTheWeek(bufferDays, result);
-  getCloudsNextDays(listDays, result);
+  getWeather(listDays, result);
 
   return result;
 }
