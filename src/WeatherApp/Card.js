@@ -7,7 +7,12 @@ function Card(props) {
   let weather = props.weather;
 
   return (
-    <div className="card">
+    <div
+      className="card"
+      onClick={() => {
+        props.setModal({isOpen: true, city: weather});
+      }}
+    >
       <div className="name-city">{weather.name}</div>
       <WeatherIcons
         weather={weather.currentDay.weather}
