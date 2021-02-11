@@ -17,12 +17,12 @@ function Card(props) {
       <div className="weather">{weather.currentDay.weather}</div>
       <div className="min-max-temp">
         <div className="min">
-          <Icon>arrow_drop_down</Icon>
+          <Icon className="temp-icon">arrow_drop_down</Icon>
           <div className="temp">{weather.currentDay.tempMin + "°"}</div>
           <span>Min</span>
         </div>
         <div className="max">
-          <Icon>arrow_drop_up</Icon>
+          <Icon className="temp-icon">arrow_drop_up</Icon>
           <div className="temp">{weather.currentDay.tempMax + "°"}</div>
           <span>Max</span>
         </div>

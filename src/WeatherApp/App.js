@@ -7,7 +7,6 @@ function App(props) {
     newCity: {},
     savedCities: []
   });
-  const [isLoading, setLoading] = React.useState(false);
 
   function getStandardCities() {
     const cities = ["Лондон", "Москва", "Пекин", "Вашингтон"];
@@ -19,10 +18,9 @@ function App(props) {
 
   useEffect(() => {
     getStandardCities();
-    setLoading(true);
   }, []);
 
-  return <Content cities={data.savedCities} />;
+  return <Content cities={data.savedCities}/>;
 }
 
 export default App;

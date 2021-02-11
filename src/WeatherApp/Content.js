@@ -1,11 +1,9 @@
 import React from "react";
 import "../styles/Content.css";
 import WeatherIcon from "./WeatherIcons";
-import Loader from "./Loader";
 import BlockCards from "./BlockCards";
 
 function Content(props) {
-  let isLoading = props.isLoading;
 
   return (
     <div className="lightTheme main-container">
