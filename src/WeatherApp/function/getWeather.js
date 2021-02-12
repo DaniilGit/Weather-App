@@ -13,7 +13,7 @@ async function getWeather(nameCity, setData, data, savedMark) {
       tempMax: (response.data.list[0].main.temp_max).toFixed(0),
       tempMin: (response.data.list[0].main.temp_min).toFixed(0),
       weather: response.data.list[0].weather[0].description,
-      wind: response.data.list[0].wind.speed,
+      wind: (response.data.list[0].wind.speed).toFixed(0),
       humidity: response.data.list[0].main.humidity,
     },
     nextDays: getWeatherNextDays(response.data.list),

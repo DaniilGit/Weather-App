@@ -30,7 +30,7 @@ function getTemp(listDays, result) {
       result.push({
         day: "",
         weather: "",
-        temp: (sumTemp / cnt).toFixed(1),
+        temp: (sumTemp / cnt).toFixed(0),
       });
       sumTemp = 0;
       cnt = 0;

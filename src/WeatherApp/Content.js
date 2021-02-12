@@ -2,11 +2,16 @@ import React from "react";
 import "../styles/Content.css";
 import WeatherIcon from "./WeatherIcons";
 import BlockCards from "./BlockCards";
+import ModalDetailed from "./ModalDetailed";
 
 function Content(props) {
+  const [modal, setModal] = React.useState({
+    isOpen: false,
+    city: "",
+  });
 
   return (
-    <div className="lightTheme main-container">
+    <div className="main-container">
       <div className="header">
         <div className="title">
           <div className="title__name">Weather App</div>
@@ -17,7 +22,11 @@ function Content(props) {
           <button>Тема</button>
         </div>
       </div>
-      <BlockCards cities={props.cities} />
+      {modal.isOpen ? (
+        <ModalDetailed modal={modal} setModal={setModal} />
+      ) : (
+        <BlockCards cities={props.cities} modal={modal} setModal={setModal} />
+      )}
     </div>
   );
 }

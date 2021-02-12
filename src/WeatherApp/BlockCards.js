@@ -2,13 +2,9 @@ import React from "react";
 import "../styles/Cards.css";
 import Card from "./Card";
 import AddCard from "./AddCard";
-import ModalDetailed from "./ModalDetailed";
+
 
 function BlockCards(props) {
-  const [modal, setModal] = React.useState({
-    isOpen: false,
-    city: "",
-  })
   let cities = props.cities;
 
   return (
@@ -16,15 +12,14 @@ function BlockCards(props) {
       {cities.map(item => {
         return (
           <Card
-            weather={item}
+            city={item}
             key={item.name}
-            modal={modal}
-            setModal={setModal}
+            modal={props.modal}
+            setModal={props.setModal}
           />
         );
       })}
       <AddCard />
-      <ModalDetailed modal={modal} setModal={setModal}/>
     </div>
   );
 }
