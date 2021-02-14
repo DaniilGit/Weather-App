@@ -25,31 +25,31 @@
   text-align: center;
 }
 
-.card .name-city {
+.card__name-city {
   text-transform: uppercase;
   font-size: 22px;
   letter-spacing: 2px;
   margin-bottom: 30px;
 }
 
-.card .icon-weather {
+.card__icon-weather {
   margin: 0;
   width: 175px;
   height: 150px;
 }
 
-.card .temp {
+.card__temp {
   margin-top: 10px;
   font-size: 48px;
 }
 
-.card .weather {
+.card__weather {
   margin-top: 10px;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.card .min-max-temp {
+.card .block-min-max {
   margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,23 +58,25 @@
       justify-content: space-around;
 }
 
-.card .min-max-temp .temp {
+.card .block-min-max .block-min, .card .block-min-max .block-max {
+  display: block;
+}
+
+.card .block-min-max .block-min__temp, .card .block-min-max .block-max__temp {
   font-size: 26px;
   margin: 0;
 }
 
-.card .min-max-temp .min span {
-  color: #00ff9b;
-  display: block;
-}
-
-.card .min-max-temp .max span {
-  color: #ff0070;
-  display: block;
-}
-
-.card .min-max-temp .temp-icon {
+.card .block-min-max .block-min__temp-icon, .card .block-min-max .block-max__temp-icon {
   width: 100%;
+}
+
+.card .block-min-max .block-min span {
+  color: #00ff9b;
+}
+
+.card .block-min-max .block-max span {
+  color: #ff0070;
 }
 
 .card:hover {
@@ -93,7 +95,7 @@
   text-align: center;
 }
 
-.add-card .header {
+.add-card__header {
   text-transform: uppercase;
   font-size: 22px;
   letter-spacing: 2px;

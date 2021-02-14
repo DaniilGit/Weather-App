@@ -11,15 +11,15 @@ function Content(props) {
   });
 
   return (
-    <div className="main-container">
+    <div className="container-main">
       <div className="header">
-        <div className="title">
-          <div className="title__name">Weather App</div>
-          <WeatherIcon weather={"обл"} nameClass={"title__icon"} />
+        <div className="header__title">
+          <div className="header__name">Weather App</div>
+          <WeatherIcon weather={"обл"} nameClass={"header__icon"} />
         </div>
         <div className="header__center">TODAY</div>
-        <div className="container-button">
-          <button>Тема</button>
+        <div className="block-button">
+          <button className="block-button__button-theme">Тема</button>
         </div>
       </div>
       {modal.isOpen ? (

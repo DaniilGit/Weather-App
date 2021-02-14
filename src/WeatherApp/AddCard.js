@@ -4,7 +4,7 @@ import "../styles/Cards.css";
 function AddCard() {
   return (
     <div className="add-card">
-      <div className="header">Добавить город</div>
+      <div className="add-card__header">Добавить город</div>
       <svg viewBox="1454.4 326.4 209.1 209.1" fill="#00ff9b">
         <defs>
           <filter

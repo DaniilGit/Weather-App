@@ -1,4 +1,4 @@
-.main-container .header {
+.container-main .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,19 +9,19 @@
   height: 50px;
 }
 
-.main-container .header .title {
+.container-main .header__title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.main-container .header .title__name {
+.container-main .header__name {
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 2px;
 }
 
-.main-container .header .title__icon {
+.container-main .header__icon {
   width: 40px;
   height: 40px;
   position: relative;
@@ -29,7 +29,7 @@
   margin-left: 10px;
 }
 
-.main-container .header__center {
+.container-main .header__center {
   width: 200px;
   font-weight: bold;
   font-size: 18px;

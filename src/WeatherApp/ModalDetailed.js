@@ -7,10 +7,10 @@ function NextDay(props) {
   let day = props.day;
   return (
     <div className="day">
-      <div className="title">{day.day}</div>
-      <WeatherIcon weather={day.weather} nameClass={"icon"} />
-      <div className="temp">{day.temp}°</div>
-      <div className="weather">{day.weather}</div>
+      <div className="day__title">{day.day}</div>
+      <WeatherIcon weather={day.weather} nameClass={"day__icon"} />
+      <div className="day__temp">{day.temp}°</div>
+      <div className="day__weather">{day.weather}</div>
     </div>
   );
 }
@@ -24,7 +24,7 @@ function ModalDetailed(props) {
     return (
       <div className="container-modal">
         <div
-          className="button-back"
+          className="container-modal__button-back"
           onClick={() => setModal({...props.modal, isOpen: false})}
         >
           <svg viewBox="4085 152 98.5 126">
@@ -56,27 +56,27 @@ function ModalDetailed(props) {
             </g>
           </svg>
         </div>
-        <div className="modal">
-          <div className="top-block">
-            <div className="left">
-              <div className="temp">{city.currentDay.temp}°</div>
-              <div className="weather">{city.currentDay.weather}</div>
-              <div className="other">
-                <div className="humidity">
+        <div className="modal-window">
+          <div className="block-top">
+            <div className="block-top-left">
+              <div className="block-top-left__temp">{city.currentDay.temp}°</div>
+              <div className="block-top-left__weather">{city.currentDay.weather}</div>
+              <div className="block-top-left__other">
+                <div className="block-top-left__humidity">
                   <div>Влажность</div>
                   {city.currentDay.humidity}%
                 </div>
-                <div className="wind">
+                <div className="block-top-left__wind">
                   <div>Ветер</div>
                   {city.currentDay.wind} м/c
                 </div>
               </div>
             </div>
-            <div className="right">
-              <div className="name-city">{city.name}</div>
+            <div className="block-top-right">
+              <div className="block-top-right__name-city">{city.name}</div>
             </div>
           </div>
-          <div className="bottom-block">
+          <div className="block-bottom">
             <div className="next-days">
               {city.nextDays.map(item => {
                 return <NextDay day={item} key={item.day} />;

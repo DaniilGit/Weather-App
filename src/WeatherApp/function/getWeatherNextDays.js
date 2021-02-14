@@ -2,13 +2,13 @@ function getDaysOfTheWeek(listDays, result) {
   let date = new Date().getDay();
   let cnt = 1;
   let days = [
-    "Воскресенье",
-    "Понедельник",
-    "Вторник",
-    "Среда",
-    "Четверг",
-    "Пятница",
-    "Суббота",
+    "ВС",
+    "ПН",
+    "ВТ",
+    "СР",
+    "ЧТ",
+    "ПТ",
+    "СБ",
   ];
 
   for (let i = 0; i < result.length; i++) {

@@ -10,6 +10,7 @@ function App(props) {
 
   function getStandardCities() {
     const cities = ["Лондон", "Москва", "Пекин", "Вашингтон"];
+    console.log(new Date());
 
     cities.forEach(item => {
       getWeather(item, setData, data, true);
