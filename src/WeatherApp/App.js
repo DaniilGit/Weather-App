@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import getWeather from "./function/getWeather";
 import Content from "./Content";
+import Context from "./Context";
 
 function App(props) {
   const [data, setData] = React.useState({
@@ -10,7 +11,6 @@ function App(props) {
 
   function getStandardCities() {
     const cities = ["Лондон", "Москва", "Пекин", "Вашингтон"];
-    console.log(new Date());
 
     cities.forEach(item => {
       getWeather(item, setData, data, true);
@@ -21,7 +21,11 @@ function App(props) {
     getStandardCities();
   }, []);
 
-  return <Content cities={data.savedCities}/>;
+  return (
+    <Context.Provider value={{data, setData}}>
+        <Content cities={data.savedCities}/>
+    </Context.Provider>
+  );
 }
 
 export default App;

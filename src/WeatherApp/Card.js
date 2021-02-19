@@ -3,15 +3,17 @@ import "../styles/Cards.css";
 import Icon from "@material-ui/core/Icon";
 import WeatherIcon from "./WeatherIcons";
 
+function showDetailedWeather(setModal, foundCard, city) {
+  if (!foundCard)
+    setModal({isOpen: true, city: city});
+}
+
 function Card(props) {
   let city = props.city;
-
   return (
     <div
-      className="card"
-      onClick={() => {
-        props.setModal({isOpen: true, city: city});
-      }}
+      className={props.nameClass}
+      onClick={() => showDetailedWeather(props.setModal, props.foundCard, city)}
     >
       <div className="card__name-city">{city.name}</div>
       <WeatherIcon

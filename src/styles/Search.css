@@ -1,0 +1,214 @@
+.container-search {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.block-search {
+  width: 90%;
+  margin-top: 25px;
+  padding: 25px 50px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.block-search .block-left {
+  width: 50%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.block-search .block-left__header {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: bold;
+  color: #0c1066;
+}
+
+.block-search .block-left__styles-points {
+  margin-top: 30px;
+  word-spacing: 15px;
+  font-size: 18px;
+}
+
+.block-search .block-left__button-add {
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  background-color: #2b244d;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+}
+
+.block-search .block-left .form-search {
+  position: relative;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.block-search .block-left .form-search__input {
+  width: 75%;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: #0c1066;
+  padding-left: 20px;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(12, 16, 102, 0.2);
+          box-shadow: 0px 5px 10px 2px rgba(12, 16, 102, 0.2);
+}
+
+.block-search .block-left .form-search__input::-webkit-input-placeholder {
+  color: #0c1066;
+}
+
+.block-search .block-left .form-search__input:-ms-input-placeholder {
+  color: #0c1066;
+}
+
+.block-search .block-left .form-search__input::-ms-input-placeholder {
+  color: #0c1066;
+}
+
+.block-search .block-left .form-search__input::placeholder {
+  color: #0c1066;
+}
+
+.block-search .block-left .form-search__button {
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: #31feae;
+  color: #ffffff;
+}
+
+.block-search .block-left .form-search__icon {
+  margin-top: 5px;
+  font-size: 40px;
+}
+
+.block-search .block-left .main-content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.block-search .block-left .main-content .found-card {
+  cursor: default;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(12, 16, 102, 0.2);
+          box-shadow: 0px 5px 10px 2px rgba(12, 16, 102, 0.2);
+}
+
+.block-search .block-left .main-content .found-card:hover {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.block-search .block-left .main-content .block-unknown-city {
+  margin: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.block-search .block-left .main-content .block-unknown-city__icon {
+  margin-top: 10px;
+  font-size: 40px;
+  color: red;
+}
+
+.lds-ring {
+  margin: 50px 0;
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  margin: 8px;
+  border: 8px solid #0c1066;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #0c1066 transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=Search.css.map */

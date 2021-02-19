@@ -16,10 +16,11 @@ function BlockCards(props) {
             key={item.name}
             modal={props.modal}
             setModal={props.setModal}
+            nameClass={"card"}
           />
         );
       })}
-      <AddCard />
+      <AddCard setSearch={props.setSearch}/>
     </div>
   );
 }

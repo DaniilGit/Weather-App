@@ -3,12 +3,14 @@ import "../styles/Content.css";
 import WeatherIcon from "./WeatherIcons";
 import BlockCards from "./BlockCards";
 import ModalDetailed from "./ModalDetailed";
+import Search from "./Search";
 
 function Content(props) {
   const [modal, setModal] = React.useState({
     isOpen: false,
     city: "",
   });
+  const [search, setSearch] = React.useState(false);
 
   return (
     <div className="container-main">
@@ -22,11 +24,16 @@ function Content(props) {
           <button className="block-button__button-theme">Тема</button>
         </div>
       </div>
-      {modal.isOpen ? (
-        <ModalDetailed modal={modal} setModal={setModal} />
-      ) : (
-        <BlockCards cities={props.cities} modal={modal} setModal={setModal} />
-      )}
+      {search && <Search setSearch={setSearch}/>}
+      {
+        !search && (
+          modal.isOpen ? (
+            <ModalDetailed modal={modal} setModal={setModal} />
+          ) : (
+            <BlockCards cities={props.cities} modal={modal} setModal={setModal} setSearch={setSearch}/>
+          )
+        )
+      }
     </div>
   );
 }
