@@ -116,6 +116,7 @@
 }
 
 .modal-window .block-top .block-top-right__name-city {
+  text-transform: uppercase;
   position: relative;
   font-size: 82px;
   height: 125px;
@@ -183,5 +184,39 @@
 
 .modal-window .block-bottom .next-days .day__weather {
   font-size: 14px;
+}
+
+.modal-search {
+  width: 100%;
+  -webkit-animation: none;
+          animation: none;
+}
+
+.modal-search .block-top .block-top-left {
+  margin-top: 25px;
+}
+
+.modal-search .block-top .block-top-left__temp {
+  font-size: 80px;
+}
+
+.modal-search .block-top .block-top-left__weather {
+  font-size: 16px;
+}
+
+.modal-search .block-top .block-top-right__name-city {
+  position: relative;
+  font-size: 48px;
+  height: 75px;
+}
+
+.modal-search .block-bottom {
+  margin-top: 20px;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.modal-search .block-bottom .next-days {
+  width: 100%;
 }
 /*# sourceMappingURL=Modal.css.map */

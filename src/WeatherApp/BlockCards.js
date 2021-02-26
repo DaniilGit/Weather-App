@@ -6,6 +6,10 @@ import "../../node_modules/animate.css/animate.css";
 
 function BlockCards(props) {
   let cities = props.cities;
+  const [deleteCheck, setDeleteCheck] = React.useState(false);
+
+  if (deleteCheck)
+    setDeleteCheck(false);
 
   return (
     <div className="container-cards">
@@ -17,6 +21,7 @@ function BlockCards(props) {
             modal={props.modal}
             setModal={props.setModal}
             nameClass={"card"}
+            setDeleteCheck={setDeleteCheck}
           />
         );
       })}

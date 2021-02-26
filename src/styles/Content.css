@@ -13,6 +13,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 200px;
 }
 
 .container-main .header__name {
@@ -31,9 +32,18 @@
 
 .container-main .header__center {
   width: 200px;
+  text-transform: uppercase;
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 3px;
+}
+
+.container-main .header .block-button {
+  width: 200px;
+}
+
+.container-main .header .block-button__button-theme {
+  float: right;
 }
 
 .lightTheme {

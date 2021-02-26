@@ -5,9 +5,10 @@ import Loader from "./Loader";
 import Icon from "@material-ui/core/Icon";
 import getWeather from "./function/getWeather";
 import Context from "./Context";
+import ModalWindow from "./ModalWindow";
 
 function Search(props) {
-  let city;
+  const [city, setCity] = React.useState();
   const {data, setData} = React.useContext(Context);
   const [error, setError] = React.useState(false);
 
@@ -19,13 +20,12 @@ function Search(props) {
 
   function getInputValue(e) {
     e.preventDefault();
-    city = e.target.value;
+    setCity(e.target.value);
   }
 
-  function searchCity(e, city) {
+  function searchCity(e) {
     e.preventDefault();
     getWeather(city, setData, data, false, setError);
-    console.log(error.error)
   }
   
   return (
@@ -35,7 +35,7 @@ function Search(props) {
           <div className="block-left__header">Поиск городов</div>
           <form className="form-search">
             <input className="form-search__input" onChange={getInputValue} placeholder="Введите название города..."></input>
-            <button className="form-search__button" onClick={(e) => searchCity(e, city)}>
+            <button className="form-search__button" onClick={searchCity}>
               <Icon className="form-search__icon">search</Icon>
             </button>
           </form>
@@ -66,14 +66,19 @@ function Search(props) {
             }
           </div>
         </div>
-        <div className="block-right">
-          <button onClick={() => {
+        {
+          isEmpty(data.newCity) && !error && (
+            <div className="block-right">
+              <ModalWindow city={data.newCity} nameClass={"modal-window modal-search"}/>
+            </div>
+          )
+        }
+        <button className="button-close" onClick={() => {
             props.setSearch(false);
             setData({ ...data, newCity: "" });
           }}>
-            Назад
-          </button>
-        </div>
+            <Icon className="form-search__icon">close</Icon>
+        </button>
       </div>
     </div>
   )

@@ -2,7 +2,8 @@ import React from "react";
 import "../styles/Content.css";
 import WeatherIcon from "./WeatherIcons";
 import BlockCards from "./BlockCards";
-import ModalDetailed from "./ModalDetailed";
+import DetailedInfo from "./DetailedInfo";
+import TodayDate from "./TodayDate";
 import Search from "./Search";
 
 function Content(props) {
@@ -19,7 +20,9 @@ function Content(props) {
           <div className="header__name">Weather App</div>
           <WeatherIcon weather={"обл"} nameClass={"header__icon"} />
         </div>
-        <div className="header__center">TODAY</div>
+        <div className="header__center">
+          <TodayDate/>
+        </div>
         <div className="block-button">
           <button className="block-button__button-theme">Тема</button>
         </div>
@@ -28,7 +31,7 @@ function Content(props) {
       {
         !search && (
           modal.isOpen ? (
-            <ModalDetailed modal={modal} setModal={setModal} />
+            <DetailedInfo modal={modal} setModal={setModal} />
           ) : (
             <BlockCards cities={props.cities} modal={modal} setModal={setModal} setSearch={setSearch}/>
           )
