@@ -154,6 +154,11 @@
   color: #fff;
 }
 
+.darkTheme .modal-search .block-bottom {
+  margin: 0;
+  padding: 15px;
+}
+
 .darkTheme .block-search .block-left .form-search__button {
   background-color: #711b86;
 }
