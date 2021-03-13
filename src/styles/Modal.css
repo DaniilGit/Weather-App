@@ -1,6 +1,6 @@
 .container-modal {
   width: 100%;
-  min-height: 94.6vmin;
+  min-height: 94.5vh;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #86dbff), to(#e0c3fc));
   background-image: linear-gradient(to top, #86dbff 0, #e0c3fc 100%);
   display: -webkit-box;
@@ -35,9 +35,31 @@
           transform: scale(1.1);
 }
 
+@media (max-width: 575px) {
+  .container-modal__button-back {
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    left: 5px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .container-modal__button-back {
+    left: 25px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1299px) {
+  .container-modal__button-back {
+    left: 50px;
+  }
+}
+
 .modal-window {
   width: 60%;
-  margin-top: 75px;
+  min-height: 650px;
+  margin-top: 50px;
   -webkit-animation: zoomInUp;
           animation: zoomInUp;
   -webkit-animation-duration: 1s;
@@ -184,6 +206,131 @@
 
 .modal-window .block-bottom .next-days .day__weather {
   font-size: 14px;
+}
+
+@media (max-width: 575px) {
+  .modal-window {
+    width: 70%;
+    min-height: 900px;
+    margin-top: 25px;
+  }
+  .modal-window .block-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .modal-window .block-top .block-top-left {
+    margin: 10px;
+  }
+  .modal-window .block-top .block-top-left__temp {
+    font-size: 72px;
+  }
+  .modal-window .block-top .block-top-right {
+    margin: 10px;
+  }
+  .modal-window .block-top .block-top-right__name-city {
+    font-size: 62px;
+  }
+  .modal-window .block-top .block-top-right__name-city::after {
+    bottom: 30px;
+  }
+  .modal-window .block-bottom {
+    min-height: 450px;
+  }
+  .modal-window .block-bottom .next-days {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .modal-window .block-bottom .next-days .day {
+    width: 100px;
+  }
+  .modal-window .block-bottom .next-days .day__weather {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .modal-window .block-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .modal-window .block-top .block-top-left {
+    margin: 20px;
+  }
+  .modal-window .block-top .block-top-left__temp {
+    font-size: 84px;
+  }
+  .modal-window .block-top .block-top-right {
+    margin: 20px;
+  }
+  .modal-window .block-top .block-top-right__name-city {
+    font-size: 72px;
+  }
+  .modal-window .block-top .block-top-right__name-city::after {
+    bottom: 20px;
+  }
+  .modal-window .block-bottom {
+    min-height: 325px;
+  }
+  .modal-window .block-bottom .next-days {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .modal-window .block-bottom .next-days .day {
+    width: 100px;
+  }
+  .modal-window .block-bottom .next-days .day__weather {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1299px) {
+  .modal-window {
+    width: 70%;
+  }
+  .modal-window .block-top .block-top-left__temp {
+    font-size: 84px;
+  }
+  .modal-window .block-top .block-top-right__name-city {
+    font-size: 72px;
+  }
+  .modal-window .block-bottom .next-days {
+    margin-top: 10px;
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1600px) {
+  .modal-window {
+    width: 70%;
+  }
 }
 
 .modal-search {

@@ -38,6 +38,8 @@ async function getWeather(nameCity, setData, data, standartSet, setError) {
     setData({...data, savedCities: buffer});
   }
 
+  localStorage.setItem("data", JSON.stringify(data));
+
 }
 
 export default getWeather;

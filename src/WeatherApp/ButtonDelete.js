@@ -13,6 +13,7 @@ function deleteCity(city, data, setData, setDeleteCheck) {
   console.log(data);
   setDeleteCheck(true);
   setData(data);
+  localStorage.setItem("data", JSON.stringify(data));
 }
 
 function ButtonDelete(props) {

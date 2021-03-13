@@ -6,6 +6,15 @@ import DetailedInfo from "./DetailedInfo";
 import TodayDate from "./TodayDate";
 import Search from "./Search";
 
+function changeTheme(e) {
+  if (!e.target.checked) {
+    document.getElementById('root').classList.toggle("darkTheme");
+  } else {
+    document.getElementById('root').classList.toggle("darkTheme");
+  }
+}
+
+
 function Content(props) {
   const [modal, setModal] = React.useState({
     isOpen: false,
@@ -24,7 +33,10 @@ function Content(props) {
           <TodayDate/>
         </div>
         <div className="block-button">
-          <button className="block-button__button-theme">Тема</button>
+          <label className="switch">
+            <input type="checkbox" onChange={changeTheme}/>
+            <span className="slider"></span>
+          </label>
         </div>
       </div>
       {search && <Search setSearch={setSearch}/>}

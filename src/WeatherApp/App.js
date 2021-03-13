@@ -18,7 +18,11 @@ function App(props) {
   }
 
   useEffect(() => {
-    getStandardCities();
+    console.log(JSON.parse (localStorage.getItem ("data")))
+    if (JSON.parse (localStorage.getItem ("data")))
+      setData(JSON.parse(localStorage.getItem ("data")));
+    else
+      getStandardCities();
   }, []);
 
   return (
